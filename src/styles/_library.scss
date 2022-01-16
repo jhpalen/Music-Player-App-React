@@ -1,0 +1,77 @@
+.library {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20rem;
+    height: 100%;
+    box-shadow: 2px 2px 50px rgba(128, 128, 128, 0.377);
+    overflow: scroll;
+    transform: translateX(-100%);
+    transition: all 0.5s ease;
+    opacity: 0;
+
+    h2 { padding: 1.3rem 2rem 2rem; }
+}
+
+.library-song {
+    display: flex;
+    align-items: center;
+    padding: 1rem 2rem ;
+    cursor: pointer ;
+    img { width: 30%; }
+    transition: background-color 0.5s ease;
+    &:hover {
+        background-color: rgba(237, 226, 247, 0.822);
+    }
+}
+
+.dark-mode .library-song {
+    &:hover {
+        background-color: white;
+        * { color: black; }
+    }
+    * { background-color: inherit; }
+}
+
+.song-description {
+    padding-left: 1rem;
+    h3 { font-size: 1rem; }
+    h4 { font-size: 0.7rem; }
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(155,155,155,0.5) transparent;
+}
+*::-webkit-scrollbar {
+    width: 5px;
+}
+*::-webkit-scrollbar-track {
+    background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+    background-color: rgba(155,155,155,0.5);
+    border-radius: 20px;
+    border: transparent;
+}
+
+.selected {
+    background-color: rgb(240, 187, 240);
+    color: black;
+}
+
+.dark-mode .selected {
+    &:hover {
+        background-color: white;
+    }
+    * { background-color: inherit; color: black; }
+}
+
+.active-library {
+    transform: translateX(0%);
+    opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+    .library { width: 100%; background-color: white; }
+}
