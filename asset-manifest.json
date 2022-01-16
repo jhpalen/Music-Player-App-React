@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/jhpalen/Music-Player-App-React.git/static/css/main.d725656c.css",
-    "main.js": "/jhpalen/Music-Player-App-React.git/static/js/main.211fd04c.js",
-    "index.html": "/jhpalen/Music-Player-App-React.git/index.html",
-    "main.d725656c.css.map": "/jhpalen/Music-Player-App-React.git/static/css/main.d725656c.css.map",
-    "main.211fd04c.js.map": "/jhpalen/Music-Player-App-React.git/static/js/main.211fd04c.js.map"
+    "main.css": "/jhpalen/Music-Player-App-React/static/css/main.d725656c.css",
+    "main.js": "/jhpalen/Music-Player-App-React/static/js/main.211fd04c.js",
+    "index.html": "/jhpalen/Music-Player-App-React/index.html",
+    "main.d725656c.css.map": "/jhpalen/Music-Player-App-React/static/css/main.d725656c.css.map",
+    "main.211fd04c.js.map": "/jhpalen/Music-Player-App-React/static/js/main.211fd04c.js.map"
   },
   "entrypoints": [
     "static/css/main.d725656c.css",
