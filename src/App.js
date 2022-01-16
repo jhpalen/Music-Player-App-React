@@ -25,6 +25,7 @@ function App() {
   //State
   const [darkMode, setDarkMode] = useState(false);
   const [onRepeat,setOnRepeat] = useState(false);
+  const [shuffle,setShuffle] = useState(false);
 
   const [songs, setSongs] = useState(data());
   const [currentSongId, setCurrentSongId] = useState(songs[0].id);
@@ -38,7 +39,21 @@ function App() {
 
   const songEndHandler = async () => {
     let currentIndex = songs.findIndex((song) => song.id === currentSong.id);
-    if(!onRepeat){ currentIndex = currentIndex + 1; }
+    let currentIndex_ = songs.findIndex((song) => song.id === currentSong.id);
+    console.log(currentIndex_);
+    if(shuffle){
+      currentIndex = Math.floor(Math.random() * Math.floor(songs.length - 1));
+      if(currentIndex === currentIndex_){
+        currentIndex = currentIndex + 1;
+      }
+    }
+    
+    currentIndex = currentIndex + 1; 
+    
+    if(!shuffle && onRepeat){
+      currentIndex = currentIndex_; 
+      console.log("On repeat, " + currentIndex);
+    }
 
     await setCurrentSong(songs[(currentIndex)%songs.length]);
     await setCurrentSongId(songs[(currentIndex)%songs.length].id);
@@ -63,6 +78,8 @@ function App() {
 
       onRepeat={onRepeat}
       setOnRepeat={setOnRepeat}
+      shuffle={shuffle}
+      setShuffle={setShuffle}
 
       darkMode={darkMode}
       />

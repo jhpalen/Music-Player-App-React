@@ -2,16 +2,15 @@ import React, {useEffect,useState} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay, faBackward, faForward, faPause } from '@fortawesome/free-solid-svg-icons';
 
-const Player = ({currentSong, isPlaying, setIsPlaying, audioRef, songInfo, setSongInfo, songs, setCurrentSong, setCurrentSongId, onRepeat, setOnRepeat, darkMode}) => {
-    //State
-    const [shuffle,setShuffle] = useState(false);
-
+const Player = ({currentSong, isPlaying, setIsPlaying, audioRef, songInfo, setSongInfo, songs, setCurrentSong, setCurrentSongId, onRepeat, setOnRepeat, darkMode, shuffle, setShuffle}) => {
     //Event Handlers
     const isShuffled = () => {
         if(shuffle){
             setShuffle(!shuffle);
+            console.log(shuffle);
         } else {
             setShuffle(!shuffle);
+            console.log(shuffle);
         }
     }
 
@@ -48,9 +47,13 @@ const Player = ({currentSong, isPlaying, setIsPlaying, audioRef, songInfo, setSo
 
     const skipTrackHandler = async (direction) => {
         let currentIndex = songs.findIndex((song) => song.id === currentSong.id);
-
+        let currentIndex_ = songs.findIndex((song) => song.id === currentSong.id);
+    
         if(shuffle){
             currentIndex = Math.floor(Math.random() * Math.floor(songs.length - 1));
+            if(currentIndex === currentIndex_){
+                currentIndex = currentIndex + 1;
+            }
         }
         
         if(direction === 'skip-forward'){
