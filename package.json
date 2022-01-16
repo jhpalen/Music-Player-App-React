@@ -2,7 +2,7 @@
   "name": "react-player",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://jhpalen.github.io",
+  "homepage": "https://github.com/jhpalen/Music-Player-App-React.git",
   "dependencies": {
     "-": "^0.0.1",
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
