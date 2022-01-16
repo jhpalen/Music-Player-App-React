@@ -50,7 +50,7 @@ function App() {
     
     currentIndex = currentIndex + 1; 
     
-    if(!shuffle && onRepeat){
+    if(onRepeat){
       currentIndex = currentIndex_; 
       console.log("On repeat, " + currentIndex);
     }
